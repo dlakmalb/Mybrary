@@ -43,9 +43,11 @@ db.once('open', () => console.log('Connected to Mongoose'));
 // Import the routers to the server
 const indexRouter  = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter   = require('./routes/books');
 
 // use routers
 app.use('/', indexRouter)
 app.use('/authors', authorRouter);
+app.use('/books', bookRouter);
 
 app.listen(process.env.PORT || 3000);
