@@ -13,6 +13,9 @@ const expressLayouts = require('express-ejs-layouts');
 // Get the express body parser package
 const bodyParser = require('body-parser');
 
+// Include method-override package to make PUT and DELETE requests
+const methodOverride = require('method-override');
+
 // Setup ejs as view engine
 app.set('view engine', 'ejs');
 
@@ -22,6 +25,7 @@ app.set('views', __dirname + '/views');
 // Set express layouts directory
 app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
