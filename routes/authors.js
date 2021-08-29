@@ -115,7 +115,13 @@ router.delete('/:id', async (req, res) => {
         if (author == null) {
             res.redirect('/');
         } else {
-            res.redirect(`/authors/${author.id}`);
+            const books = await Book.find({ author: author.id }).limit(6).exec();
+
+            res.render('authors/show', {
+                author: author,
+                booksByAuthor: books,
+                errorMessage: 'This author has books',
+            });
         }
     }
 });
