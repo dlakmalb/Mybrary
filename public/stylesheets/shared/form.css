@@ -1,0 +1,78 @@
+:root {
+    --form-label-font-size: 1.2rem;
+    --form-input-border-color: hsl(var(--color-base-hue), 100%, 50%);
+    --form-input-border-color-light: hsl(var(--color-base-hue), 100%, 80%);
+    --form-input-background-color: hsl(var(--color-base-hue), 100%, 31%);
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+.form-item {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    margin-left: 2rem;
+    flex-direction: column;
+}
+
+.form-item:first-child {
+    margin-left: 0;
+}
+
+.form-item-no-grow {
+    flex-grow: 0;
+}
+
+.form-row-end {
+    justify-content: flex-end;
+}
+
+.form-item > label {
+    margin-left: .25rem;
+    margin-bottom: .25rem;
+    font-size: var(--form-label-font-size);
+}
+
+.form-item input, .form-item select, .form-item textarea {
+    height: 2rem;
+    outline: none;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+    font-family: 'Gotham Rounded';
+    color: var(--color-text-light);
+    border: 1px solid var(--form-input-border-color);
+    background-color: var(--form-input-background-color);
+}
+
+.form-item textarea {
+    height: 100%;
+    resize: none;
+}
+
+.form-item select option {
+    background-color: black;
+}
+
+.form-item input:focus .form-item select:focus .form-item textarea:focus {
+    border-color: var(--form-input-border-color-light);
+}
+
+.filepond--root {
+    margin-bottom: 0;
+    font-family: 'Gotham Rounded';
+}
+
+.filepond--panel-root {
+    border: 1px solid var(--form-input-border-color);
+    background-color: var(--form-input-background-color);
+}
+
+.filepond--drop-label {
+    font-size: inherit;
+    color: var(--color-text-light);
+}
